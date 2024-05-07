@@ -12,7 +12,7 @@ class FluidNavBarDemo extends StatefulWidget {
   State createState() {
     return _FluidNavBarDemoState();
   }
-}
+} 
 
 class _FluidNavBarDemoState extends State {
   Widget? _child;
@@ -31,32 +31,35 @@ class _FluidNavBarDemoState extends State {
         backgroundColor: Color(0xFF75B7E1),
         extendBody: true,
         body: _child,
-        bottomNavigationBar: FluidNavBar(
-          icons: [
-            FluidNavBarIcon(
-                svgPath: "assets/home.svg",
-                backgroundColor: Color(0xFF4285F4),
-                extras: {"label": "home"}),
-            FluidNavBarIcon(
-                icon: Icons.bookmark_border,
-                backgroundColor: Color(0xFFEC4134),
-                extras: {"label": "bookmark"}),
-            FluidNavBarIcon(
-                icon: Icons.apps,
-                backgroundColor: Color(0xFFFCBA02),
-                extras: {"label": "partner"}),
-            FluidNavBarIcon(
-                svgPath: "assets/conference.svg",
-                backgroundColor: Color(0xFF34A950),
-                extras: {"label": "conference"}),
-          ],
-          onChange: _handleNavigationChange,
-          style: FluidNavBarStyle(iconUnselectedForegroundColor: Colors.white),
-          scaleFactor: 1.5,
-          defaultIndex: 1,
-          itemBuilder: (icon, item) => Semantics(
-            label: icon.extras!["label"],
-            child: item,
+        bottomNavigationBar: Container(
+          
+          child: FluidNavBar(
+            icons: [
+              FluidNavBarIcon(
+                  svgPath: "assets/home.svg",
+                  backgroundColor: Color(0xFF4285F4),
+                  extras: {"label": "home"}),
+              FluidNavBarIcon(
+                  icon: Icons.bookmark_border,
+                  backgroundColor: Color(0xFFEC4134),
+                  extras: {"label": "bookmark"}),
+              FluidNavBarIcon(
+                  icon: Icons.apps,
+                  backgroundColor: Color(0xFFFCBA02),
+                  extras: {"label": "partner"}),
+              FluidNavBarIcon(
+                  svgPath: "assets/conference.svg",
+                  backgroundColor: Color(0xFF34A950),
+                  extras: {"label": "conference"}),
+            ],
+            onChange: _handleNavigationChange,
+            style: FluidNavBarStyle(iconUnselectedForegroundColor: Colors.white),
+            scaleFactor: 1.5,
+            defaultIndex: 1,
+            itemBuilder: (icon, item) => Semantics(
+              label: icon.extras!["label"],
+              child: item,
+            ),
           ),
         ),
       ),
