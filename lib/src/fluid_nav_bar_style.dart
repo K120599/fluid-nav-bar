@@ -21,7 +21,11 @@ import 'package:flutter/widgets.dart';
 @immutable
 class FluidNavBarStyle with Diagnosticable {
   /// The navigation bar background color
+  
   final Color? barBackgroundColor;
+
+//gradient color background
+  final List<Color>? barColorList;
 
   /// Icons background color
   final Color? iconBackgroundColor;
@@ -34,6 +38,7 @@ class FluidNavBarStyle with Diagnosticable {
 
   const FluidNavBarStyle({
     this.barBackgroundColor,
+    this.barColorList,
     this.iconBackgroundColor,
     this.iconSelectedForegroundColor,
     this.iconUnselectedForegroundColor,
